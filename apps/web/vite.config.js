@@ -1,11 +1,6 @@
 import path from 'node:path';
 import react from '@vitejs/plugin-react';
 import { createLogger, defineConfig } from 'vite';
-import inlineEditPlugin from './plugins/visual-editor/vite-plugin-react-inline-editor.js';
-import editModeDevPlugin from './plugins/visual-editor/vite-plugin-edit-mode.js';
-import selectionModePlugin from './plugins/selection-mode/vite-plugin-selection-mode.js';
-import iframeRouteRestorationPlugin from './plugins/vite-plugin-iframe-route-restoration.js';
-import pocketbaseAuthPlugin from './plugins/vite-plugin-pocketbase-auth.js';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -77,9 +72,9 @@ window.onerror = (message, source, lineno, colno, errorObj) => {
 
 const configHorizonsConsoleErrorHandler = `
 const originalConsoleError = console.error;
-const MATCH_LINE_COL_REGEX = /:(\\d+):(\\d+)\\)?\\s*$/; // regex to match the :lineNum:colNum
-const MATCH_AT_REGEX = /^\\s*at\\s+(?:async\\s+)?(?:.*?\\s+)?\\(?/; // regex to remove the 'at' keyword and any 'async' or function name
-const MATCH_PATH_REGEX = /^\\//; // regex to remove the leading slash
+const MATCH_LINE_COL_REGEX = /:(\\d+):(\\d+)\\)?\\s*$/;
+const MATCH_AT_REGEX = /^\\s*at\\s+(?:async\\s+)?(?:.*?\\s+)?\\(?/;
+const MATCH_PATH_REGEX = /^\\//;
 
 function parseStackFrameLine(line) {
 	const lineColMatch = line.match(MATCH_LINE_COL_REGEX);
@@ -106,9 +101,7 @@ function parseStackFrameLine(line) {
 function getFilePathFromStack(stack, skipFrames = 0) {
 	if (!stack || typeof stack !== 'string') return null;
 	const lines = stack.split('\\n').slice(1);
-
 	const frames = lines.map(line => parseStackFrameLine(line.replace(/\\r$/, ''))).filter(Boolean);
-
 	return frames[skipFrames] ?? null;
 }
 
@@ -152,7 +145,6 @@ const originalFetch = window.fetch;
 window.fetch = function(...args) {
 	const url = args[0] instanceof Request ? args[0].url : args[0];
 
-	// Skip WebSocket URLs
 	if (url.startsWith('ws:') || url.startsWith('wss:')) {
 		return originalFetch.apply(this, args);
 	}
@@ -160,8 +152,6 @@ window.fetch = function(...args) {
 	return originalFetch.apply(this, args)
 		.then(async response => {
 			const contentType = response.headers.get('Content-Type') || '';
-
-			// Exclude HTML document responses
 			const isDocumentResponse =
 				contentType.includes('text/html') ||
 				contentType.includes('application/xhtml+xml');
@@ -179,7 +169,6 @@ window.fetch = function(...args) {
 			if (!url.match(/\.html?$/i)) {
 				console.error(error);
 			}
-
 			throw error;
 		});
 };
@@ -246,19 +235,6 @@ const addTransformIndexHtml = {
 			},
 		];
 
-		if (!isDev && process.env.TEMPLATE_BANNER_SCRIPT_URL && process.env.TEMPLATE_REDIRECT_URL) {
-			tags.push(
-				{
-					tag: 'script',
-					attrs: {
-						src: process.env.TEMPLATE_BANNER_SCRIPT_URL,
-						'template-redirect-url': process.env.TEMPLATE_REDIRECT_URL,
-					},
-					injectTo: 'head',
-				}
-			);
-		}
-
 		return {
 			html,
 			tags,
@@ -275,14 +251,12 @@ logger.error = (msg, options) => {
 	if (options?.error?.toString().includes('CssSyntaxError: [postcss]')) {
 		return;
 	}
-
 	loggerError(msg, options);
 }
 
 export default defineConfig({
 	customLogger: logger,
 	plugins: [
-		...(isDev ? [inlineEditPlugin(), editModeDevPlugin(), selectionModePlugin(), iframeRouteRestorationPlugin(), pocketbaseAuthPlugin()] : []),
 		react(),
 		addTransformIndexHtml
 	],
@@ -295,12 +269,13 @@ export default defineConfig({
 		allowedHosts: true,
 	},
 	resolve: {
-		extensions: ['.jsx', '.js', '.tsx', '.ts', '.json', ],
+		extensions: ['.jsx', '.js', '.tsx', '.ts', '.json'],
 		alias: {
 			'@': path.resolve(__dirname, './src'),
 		},
 	},
 	build: {
+		outDir: 'dist',  // ← CORREGIDO: ruta local simple
 		rollupOptions: {
 			external: [
 				'@babel/parser',
