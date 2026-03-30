@@ -275,8 +275,7 @@ export default defineConfig({
 		},
 	},
 	build: {
-		outDir: 'dist',  // ← CORREGIDO: ruta local simple
-		outDir: "dist",
+		outDir: 'dist',
 		rollupOptions: {
 			external: [
 				'@babel/parser',

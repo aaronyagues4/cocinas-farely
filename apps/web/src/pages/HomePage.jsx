@@ -3,11 +3,10 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ChefHat, Bath, Folders as Cabinet, ArrowRight } from 'lucide-react';
+import { ArrowRight, Hammer, Search, Pencil, Lightbulb, Handshake, Gem, Trophy } from 'lucide-react';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import FloatingButtons from '@/components/FloatingButtons.jsx';
-import ServiceCard from '@/components/ServiceCard.jsx';
 import TestimonialCard from '@/components/TestimonialCard.jsx';
 import { Button } from '@/components/ui/button';
 
@@ -74,7 +73,7 @@ function HomePage() {
               Diseño y reforma de cocinas, baños y armarios a medida
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed">
-              Transforma tu hogar en la Vega Baja del Segura con soluciones personalizadas
+              Llevamos más de 30 años dando forma a los hogares de la Vega Baja. Cuéntanos tu idea y nosotros nos encargamos del resto.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/contacto">
@@ -100,7 +99,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Services Section - 2+1 Layout */}
+      {/* Por qué elegir Farely */}
       <section className="section-spacing bg-muted text-foreground">
         <div className="container-custom">
           <motion.div
@@ -110,37 +109,39 @@ function HomePage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Nuestros servicios</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Soluciones completas para transformar cada espacio de tu hogar
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">¿Por qué elegir Farely?</h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            <ServiceCard
-              icon={ChefHat}
-              title="Cocinas"
-              description="Diseñamos y fabricamos cocinas a medida que combinan funcionalidad y estética. Desde cocinas modernas hasta rústicas, adaptadas a tu estilo de vida."
-              link="/servicios#cocinas"
-              delay={0.1}
-            />
-            <ServiceCard
-              icon={Bath}
-              title="Baños"
-              description="Reformas integrales de baños con materiales de primera calidad. Creamos espacios de relax y confort adaptados a tus necesidades."
-              link="/servicios#banos"
-              delay={0.2}
-            />
-          </div>
-
-          <div className="max-w-2xl mx-auto">
-            <ServiceCard
-              icon={Cabinet}
-              title="Armarios"
-              description="Armarios empotrados y vestidores a medida que optimizan el espacio. Diseños personalizados con acabados de alta calidad."
-              link="/servicios#armarios"
-              delay={0.3}
-            />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { num: 1, icon: Hammer,    title: 'Fabricación Propia',          desc: 'Controlamos todo el proceso, lo que nos permite garantizar acabados impecables y una calidad excepcional.' },
+              { num: 2, icon: Search,    title: 'Atención al Detalle',         desc: 'La precisión y el cuidado en cada paso aseguran resultados perfectos hasta en el último rincón.' },
+              { num: 3, icon: Pencil,    title: 'Diseño Personalizado',        desc: 'Creamos espacios únicos que reflejan tu estilo, personalidad y forma de vida.' },
+              { num: 4, icon: Lightbulb, title: 'Innovación y Tendencias',     desc: 'Siempre a la vanguardia del diseño interior, combinamos creatividad con las últimas tendencias.' },
+              { num: 5, icon: Handshake, title: 'Trato cercano y compromiso',  desc: 'Te acompañamos en todo el proceso con atención personalizada, cercanía y profesionalidad.' },
+              { num: 6, icon: Gem,       title: 'Materiales de Alta Calidad',  desc: 'Seleccionamos cuidadosamente los mejores materiales para ofrecerte durabilidad, belleza y resistencia.' },
+              { num: 7, icon: Trophy,    title: 'Experiencia y Tradición',     desc: 'Más de 30 años de trayectoria uniendo la tradición artesanal con la tecnología y técnicas más modernas.' },
+            ].map(({ num, icon: Icon, title, desc }, index) => (
+              <motion.div
+                key={num}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="flex flex-col items-center text-center gap-3"
+              >
+                <div className="relative">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+                    <Icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center">
+                    {num}
+                  </span>
+                </div>
+                <h3 className="font-bold text-lg leading-tight">{title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
