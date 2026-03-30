@@ -37,7 +37,7 @@ function SobreNosotrosPage() {
         {/* Company Story */}
         <section className="section-spacing">
           <div className="container-custom">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-3xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -52,15 +52,15 @@ function SobreNosotrosPage() {
                 <h2 className="section-title text-center">NUESTRA HISTORIA</h2>
               </motion.div>
 
-              <div className="space-y-16 text-center">
+              <div className="space-y-16">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
                 >
-                  <h3 className="text-2xl font-bold mb-4 text-foreground">Nacidos en la Vega Baja</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <h3 className="text-2xl font-bold mb-4 text-foreground text-center">Nacidos en la Vega Baja</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed text-justify">
                     Nuestra trayectoria comenzó en el corazón de la Vega Baja del Segura, en Benijófar. Desde nuestros inicios, hemos estado profundamente arraigados a esta tierra, entendiendo las necesidades y el estilo de vida de nuestros vecinos. Esta conexión local nos ha permitido crecer de manera sostenida, convirtiéndonos en un referente de confianza para el diseño y reforma de interiores en toda la comarca.
                   </p>
                 </motion.div>
@@ -71,8 +71,8 @@ function SobreNosotrosPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
                 >
-                  <h3 className="text-2xl font-bold mb-4 text-foreground">Una historia familiar</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <h3 className="text-2xl font-bold mb-4 text-foreground text-center">Una historia familiar</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed text-justify">
                     Cocinas Farely no es solo una empresa, es el resultado del esfuerzo y la dedicación de una familia apasionada por el trabajo bien hecho. Transmitiendo el oficio y los valores de generación en generación, hemos logrado mantener la esencia de la carpintería tradicional mientras incorporamos las últimas innovaciones tecnológicas y tendencias de diseño del mercado actual.
                   </p>
                 </motion.div>
@@ -83,8 +83,8 @@ function SobreNosotrosPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
                 >
-                  <h3 className="text-2xl font-bold mb-4 text-foreground">El valor de cada detalle</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <h3 className="text-2xl font-bold mb-4 text-foreground text-center">El valor de cada detalle</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed text-justify">
                     Sabemos que la diferencia entre un buen trabajo y un trabajo excepcional reside en los detalles. Por ello, seleccionamos meticulosamente cada material, herraje y acabado. Nuestro equipo de profesionales supervisa cada fase del proyecto, desde el primer boceto en 3D hasta el último ajuste durante la instalación, garantizando que el resultado final supere siempre las expectativas.
                   </p>
                 </motion.div>
@@ -95,8 +95,8 @@ function SobreNosotrosPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
                 >
-                  <h3 className="text-2xl font-bold mb-4 text-foreground">Cercanía que deja huella</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <h3 className="text-2xl font-bold mb-4 text-foreground text-center">Cercanía que deja huella</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed text-justify">
                     Para nosotros, cada cliente es único y cada proyecto es personal. Nos enorgullece ofrecer un trato cercano, honesto y transparente. Escuchamos tus ideas, resolvemos tus dudas y te asesoramos con la experiencia que nos avala. Esta filosofía de trabajo nos ha permitido construir relaciones duraderas y convertir a muchos de nuestros clientes en nuestros mejores embajadores.
                   </p>
                 </motion.div>
