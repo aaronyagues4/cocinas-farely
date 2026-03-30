@@ -19,14 +19,14 @@ function PoliticaPrivacidadPage() {
 
       <div className="pt-20">
         {/* Page Header */}
-        <section className="section-spacing-sm bg-secondary">
+        <section className="section-spacing-sm bg-muted">
           <div className="container-custom text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">Política de privacidad</h1>
+              <h2 className="section-title">Política de Privacidad</h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 Información sobre el tratamiento de tus datos personales conforme al RGPD
               </p>
@@ -50,11 +50,11 @@ function PoliticaPrivacidadPage() {
                     El responsable del tratamiento de los datos personales recogidos en www.cocinasfarely.es es:
                   </p>
                   <ul className="list-disc list-inside space-y-2 text-muted-foreground mt-4">
-                    <li>Denominación social: Cocinas Farely S.L.</li>
-                    <li>NIF: B-12345678</li>
-                    <li>Domicilio: Calle Ejemplo, 123, 28001 Madrid, España</li>
-                    <li>Email: info@cocinasfarely.es</li>
-                    <li>Teléfono: +34 912 345 678</li>
+                    <li>Denominación social: COCINAS FARELY SL</li>
+                    <li>CIF: B53051652</li>
+                    <li>Domicilio: Calle Ramón y Cajal 17, Benijófar - 03178, España</li>
+                    <li>Email: cocinasfarely@yahoo.es</li>
+                    <li>Teléfono: +34 678 63 61 06</li>
                   </ul>
                 </div>
 
@@ -120,7 +120,7 @@ function PoliticaPrivacidadPage() {
                     <li>Derecho de oposición: oponerte al tratamiento de tus datos.</li>
                   </ul>
                   <p className="text-muted-foreground leading-relaxed mt-4">
-                    Para ejercer estos derechos, puedes enviar un email a info@cocinasfarely.es adjuntando copia de tu DNI o documento identificativo equivalente.
+                    Para ejercer estos derechos, puedes enviar un email a cocinasfarely@yahoo.es adjuntando copia de tu DNI o documento identificativo equivalente.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mt-4">
                     También tienes derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es) si consideras que el tratamiento de tus datos personales no se ajusta a la normativa vigente.
