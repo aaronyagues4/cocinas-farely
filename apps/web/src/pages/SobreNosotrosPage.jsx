@@ -52,7 +52,7 @@ function SobreNosotrosPage() {
                 <h2 className="section-title text-center">NUESTRA HISTORIA</h2>
               </motion.div>
 
-              <div className="space-y-16">
+              <div className="space-y-16 text-center">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
