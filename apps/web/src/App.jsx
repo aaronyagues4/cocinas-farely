@@ -14,6 +14,7 @@ import AvisoLegalPage from './pages/AvisoLegalPage.jsx';
 import PoliticaPrivacidadPage from './pages/PoliticaPrivacidadPage.jsx';
 import TrabajosConNosotrosPage from './pages/TrabajosConNosotrosPage.jsx';
 import { Toaster } from '@/components/ui/sonner';
+import CookieBanner from './components/CookieBanner.jsx';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
         } />
       </Routes>
       <Toaster />
+      <CookieBanner />
     </Router>
   );
 }
