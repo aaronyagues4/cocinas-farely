@@ -143,7 +143,7 @@ function ProcesoPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-8 text-center"
+              className="mt-8 w-full text-center"
             >
               <p className="text-sm text-muted-foreground italic">
                 * Los plazos pueden variar según la complejidad del proyecto y la disponibilidad de materiales
