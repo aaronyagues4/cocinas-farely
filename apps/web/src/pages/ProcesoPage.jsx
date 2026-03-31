@@ -145,7 +145,7 @@ function ProcesoPage() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="mt-8 w-full text-center"
             >
-              <p className="text-sm text-muted-foreground italic">
+              <p className="text-sm text-muted-foreground italic max-w-5xl mx-auto text-center">
                 * Los plazos pueden variar según la complejidad del proyecto y la disponibilidad de materiales
               </p>
             </motion.div>
