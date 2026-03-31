@@ -42,14 +42,14 @@ function PortfolioCard({ image, title, category, description, delay = 0 }) {
       </motion.div>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-4xl bg-white border-none shadow-2xl">
+        <DialogContent className="max-w-4xl bg-white border-none shadow-2xl max-h-[90vh] overflow-y-auto">
           <div className="space-y-6">
             <div className="overflow-hidden rounded-xl">
               <img
                 src={fullUrl}
                 alt={title}
                 decoding="async"
-                className="w-full h-auto object-cover"
+                className="w-full max-h-[60vh] object-contain"
               />
             </div>
             <div>
