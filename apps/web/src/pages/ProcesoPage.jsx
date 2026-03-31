@@ -86,7 +86,7 @@ function ProcesoPage() {
 
         {/* Timeline Summary */}
         <section className="section-spacing bg-muted">
-          <div className="container-custom">
+          <div className="container-custom text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
