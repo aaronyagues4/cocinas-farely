@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import Header from '@/components/Header.jsx';
@@ -8,10 +8,7 @@ import FloatingButtons from '@/components/FloatingButtons.jsx';
 import PortfolioCard from '@/components/PortfolioCard.jsx';
 import { Button } from '@/components/ui/button';
 
-function PortfolioPage() {
-  const [activeFilter, setActiveFilter] = useState('Todos');
-
-  const portfolioItems = [
+const portfolioItems = [
     {
       image: 'https://images.unsplash.com/photo-1556912173-46c336c7fd55',
       title: 'Cocina moderna con isla central',
@@ -86,11 +83,15 @@ function PortfolioPage() {
     },
   ];
 
-  const categories = ['Todos', 'Cocinas', 'Baños', 'Armarios'];
+const categories = ['Todos', 'Cocinas', 'Baños', 'Armarios'];
 
-  const filteredItems = activeFilter === 'Todos' 
-    ? portfolioItems 
-    : portfolioItems.filter(item => item.category === activeFilter);
+function PortfolioPage() {
+  const [activeFilter, setActiveFilter] = useState('Todos');
+
+  const filteredItems = useMemo(
+    () => activeFilter === 'Todos' ? portfolioItems : portfolioItems.filter(item => item.category === activeFilter),
+    [activeFilter]
+  );
 
   return (
     <>
@@ -143,7 +144,7 @@ function PortfolioPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {filteredItems.map((item, index) => (
                 <PortfolioCard
-                  key={index}
+                  key={item.title}
                   {...item}
                   delay={index * 0.05}
                 />
