@@ -1,0 +1,14 @@
+{
+  "name": "studio",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev":   "sanity dev --port 3333",
+    "build": "sanity build",
+    "start": "sanity start"
+  },
+  "dependencies": {
+    "sanity":         "^3",
+    "@sanity/vision": "^3"
+  }
+}

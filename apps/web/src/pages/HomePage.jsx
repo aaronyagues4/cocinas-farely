@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -9,16 +9,23 @@ import Footer from '@/components/Footer.jsx';
 import FloatingButtons from '@/components/FloatingButtons.jsx';
 import TestimonialCard from '@/components/TestimonialCard.jsx';
 import { Button } from '@/components/ui/button';
+import { client, urlFor } from '@/lib/sanityClient.js';
+
+const HOME_GALLERY_QUERY = `
+  *[_type == "portfolioProject"] | order(order asc, _createdAt asc)[0..5] {
+    _id, title, image
+  }
+`;
 
 function HomePage() {
-  const portfolioImages = [
-    { url: 'https://images.unsplash.com/photo-1556912173-46c336c7fd55', alt: 'Cocina moderna con isla central' },
-    { url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136', alt: 'Cocina minimalista blanca' },
-    { url: 'https://images.unsplash.com/photo-1556911220-bff31c812dba', alt: 'Baño contemporáneo con ducha' },
-    { url: 'https://images.unsplash.com/photo-1620626011761-996317b8d101', alt: 'Armario empotrado a medida' },
-    { url: 'https://images.unsplash.com/photo-1556909212-d5b604d0c90d', alt: 'Cocina rústica moderna' },
-    { url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136', alt: 'Baño de lujo con bañera' },
-  ];
+  const [portfolioImages, setPortfolioImages] = useState([]);
+
+  useEffect(() => {
+    client
+      .fetch(HOME_GALLERY_QUERY)
+      .then(setPortfolioImages)
+      .catch(() => {});
+  }, []);
 
   const testimonials = [
     {
@@ -163,18 +170,24 @@ function HomePage() {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {portfolioImages.map((image, index) => (
+            {portfolioImages.map((item, index) => (
               <motion.div
-                key={index}
+                key={item._id}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                <img 
-                  src={image.url} 
-                  alt={image.alt}
+                <img
+                  src={
+                    item.image
+                      ? urlFor(item.image).width(800).height(600).fit('crop').auto('format').quality(75).url()
+                      : ''
+                  }
+                  alt={item.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
               </motion.div>

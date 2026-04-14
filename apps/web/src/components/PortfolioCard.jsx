@@ -3,12 +3,20 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
+import { urlFor } from '@/lib/sanityClient.js';
 
 function PortfolioCard({ image, title, category, description, delay = 0 }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const thumbUrl = `${image}?w=600&q=75&fit=crop&auto=format`;
-  const fullUrl  = `${image}?w=1400&q=85&fit=crop&auto=format`;
+  const isSanityImage = typeof image === 'object' && image?._type === 'image';
+
+  const thumbUrl = isSanityImage
+    ? urlFor(image).width(600).height(450).fit('crop').auto('format').quality(75).url()
+    : `${image}?w=600&q=75&fit=crop&auto=format`;
+
+  const fullUrl = isSanityImage
+    ? urlFor(image).width(1400).fit('clip').auto('format').quality(85).url()
+    : `${image}?w=1400&q=85&fit=crop&auto=format`;
 
   return (
     <>
