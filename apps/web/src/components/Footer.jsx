@@ -10,10 +10,12 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <span className="text-2xl font-bold text-white tracking-tight">
-                Cocinas <span className="text-primary">Farely</span>
-              </span>
+            <div className="mb-6">
+              <img
+                src="/logo.png"
+                alt="Cocinas Farely"
+                className="h-10 w-auto invert mix-blend-screen"
+              />
             </div>
             <p className="text-crema/75 text-sm leading-relaxed">
               Diseño y reforma de cocinas, baños y armarios a medida en la Vega Baja del Segura. Transformamos espacios con pasión y calidad.

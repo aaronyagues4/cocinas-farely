@@ -24,10 +24,12 @@ function Header() {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <span className="text-2xl font-bold text-foreground tracking-tight">
-              Cocinas <span className="text-primary">Farely</span>
-            </span>
+          <Link to="/" className="flex items-center group">
+            <img
+              src="/logo.png"
+              alt="Cocinas Farely"
+              className="h-12 w-auto mix-blend-multiply"
+            />
           </Link>
 
           {/* Desktop Navigation */}

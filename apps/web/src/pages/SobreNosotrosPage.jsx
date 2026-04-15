@@ -60,9 +60,27 @@ function SobreNosotrosPage() {
                   transition={{ duration: 0.6 }}
                 >
                   <h3 className="text-2xl font-bold mb-4 text-foreground text-center">Nacidos en la Vega Baja</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed text-justify">
+                  <p className="text-lg text-muted-foreground leading-relaxed text-justify mb-8">
                     Nuestra trayectoria comenzó en el corazón de la Vega Baja del Segura, en Benijófar. Desde nuestros inicios, hemos estado profundamente arraigados a esta tierra, entendiendo las necesidades y el estilo de vida de nuestros vecinos. Esta conexión local nos ha permitido crecer de manera sostenida, convirtiéndonos en un referente de confianza para el diseño y reforma de interiores en toda la comarca.
                   </p>
+                  <motion.figure
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7 }}
+                    className="rounded-2xl overflow-hidden shadow-xl m-0"
+                  >
+                    <img
+                      src="/nave-historica.jpg"
+                      alt="Nuestras instalaciones en sus inicios, Benijófar"
+                      className="w-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <figcaption className="text-sm text-muted-foreground italic text-center py-3 bg-muted">
+                      Nuestras instalaciones en sus inicios, Benijófar
+                    </figcaption>
+                  </motion.figure>
                 </motion.div>
 
                 <motion.div
