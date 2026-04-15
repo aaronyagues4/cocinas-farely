@@ -15,7 +15,6 @@ function Header() {
     { name: 'Portfolio', path: '/portfolio' },
     { name: 'Sobre Nosotros', path: '/sobre-nosotros' },
     { name: 'Nuestros Procesos', path: '/proceso' },
-    { name: 'FAQ', path: '/faq' },
   ];
 
   const isActive = (path) => location.pathname === path;

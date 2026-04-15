@@ -8,6 +8,7 @@ import FloatingButtons from '@/components/FloatingButtons.jsx';
 import PortfolioCard from '@/components/PortfolioCard.jsx';
 import { Button } from '@/components/ui/button';
 import { client } from '@/lib/sanityClient.js';
+import { Instagram, Facebook } from 'lucide-react';
 
 const categories = ['Todos', 'Cocinas', 'Baños', 'Armarios'];
 
@@ -138,6 +139,42 @@ function PortfolioPage() {
                 )}
               </>
             )}
+          </div>
+        </section>
+        {/* Social Media Banner */}
+        <section className="py-10 bg-muted border-t border-border">
+          <div className="container-custom">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-6 text-center sm:text-left"
+            >
+              <p className="text-muted-foreground text-base">
+                ¿Quieres ver más proyectos? Síguenos en redes sociales para estar al día de nuestros últimos trabajos.
+              </p>
+              <div className="flex gap-3 shrink-0">
+                <a
+                  href="https://www.instagram.com/cocinasfarely/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-card border border-border text-sm font-medium hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-200"
+                >
+                  <Instagram className="w-4 h-4" />
+                  Instagram
+                </a>
+                <a
+                  href="https://www.facebook.com/CocinasFarely/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-card border border-border text-sm font-medium hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-200"
+                >
+                  <Facebook className="w-4 h-4" />
+                  Facebook
+                </a>
+              </div>
+            </motion.div>
           </div>
         </section>
       </div>

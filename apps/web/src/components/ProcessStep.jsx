@@ -14,7 +14,7 @@ function ProcessStep({ number, icon: Icon, title, description, delay = 0 }) {
         <div className="w-16 h-16 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center font-bold text-2xl shadow-md group-hover:scale-110 group-hover:shadow-lg transition-all duration-300 z-10">
           {number}
         </div>
-        {number < 5 && (
+        {number < 6 && (
           <div className="w-0.5 h-full bg-border mt-4 hidden md:block group-hover:bg-primary/30 transition-colors duration-300" />
         )}
       </div>

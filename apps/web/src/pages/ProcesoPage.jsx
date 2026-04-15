@@ -1,52 +1,60 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { MessageSquare, Ruler, Hammer, Wrench, CheckCircle } from 'lucide-react';
+import { MessageSquare, MapPin, Pencil, MonitorPlay, Hammer, HeartHandshake, ArrowRight } from 'lucide-react';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import FloatingButtons from '@/components/FloatingButtons.jsx';
 import ProcessStep from '@/components/ProcessStep.jsx';
+import { Button } from '@/components/ui/button';
 
 function ProcesoPage() {
   const steps = [
     {
       number: 1,
       icon: MessageSquare,
-      title: 'Consulta inicial',
-      description: 'Nos reunimos contigo para entender tus necesidades, gustos y presupuesto. Visitamos el espacio para tomar medidas precisas y evaluar las posibilidades. Esta primera consulta es completamente gratuita y sin compromiso.'
+      title: 'Primera reunión en nuestro showroom',
+      description: 'Todo empieza con una conversación. Ven a vernos, cuéntanos lo que tienes en mente y nosotros te mostramos materiales, acabados y posibilidades. Sin prisas, sin compromiso y sin coste. Es el momento de empezar a darle forma a tu idea.'
     },
     {
       number: 2,
-      icon: Ruler,
-      title: 'Diseño personalizado',
-      description: 'Nuestro equipo de diseño crea un proyecto 3D fotorrealista adaptado a tus especificaciones. Te presentamos diferentes opciones de materiales, acabados y distribución. Realizamos todos los ajustes necesarios hasta que el diseño sea perfecto.'
+      icon: MapPin,
+      title: 'Visita a tu espacio',
+      description: 'Si lo necesitas, nos acercamos a tu casa para ver el espacio, tomar medidas y hacer los primeros bocetos sobre el terreno. Lo coordinamos cuando mejor te venga. Así trabajamos sobre la realidad, no sobre suposiciones.'
     },
     {
       number: 3,
-      icon: Hammer,
-      title: 'Fabricación',
-      description: 'Una vez aprobado el diseño, comenzamos la fabricación en nuestro taller con maquinaria de última generación. Utilizamos únicamente materiales de primera calidad de proveedores certificados. El proceso de fabricación dura entre 3 y 4 semanas.'
+      icon: Pencil,
+      title: 'Diseño y elección de materiales',
+      description: 'Con las medidas y tus preferencias claras, trabajamos contigo en cada detalle — materiales, acabados, distribución y diseño. Las reuniones que hagan falta, hasta que tengas delante exactamente lo que imaginabas.'
     },
     {
       number: 4,
-      icon: Wrench,
-      title: 'Instalación profesional',
-      description: 'Nuestro equipo de instaladores profesionales se encarga de todo: fontanería, electricidad, alicatado y montaje de muebles. Trabajamos con limpieza y respeto por tu hogar. La instalación completa suele durar entre 1 y 2 semanas según el proyecto.'
+      icon: MonitorPlay,
+      title: 'Presupuesto y render 3D fotorrealista',
+      description: 'Una vez cerrado el diseño, lo enviamos a taller para elaborar el presupuesto. Te lo presentamos en una reunión donde también podrás ver tu proyecto en un render 3D fotorrealista — para que sepas exactamente cómo va a quedar antes de aprobar nada.'
     },
     {
       number: 5,
-      icon: CheckCircle,
-      title: 'Entrega y garantía',
-      description: 'Realizamos una inspección final contigo para asegurarnos de que todo está perfecto. Te entregamos toda la documentación, manuales y certificados de garantía. Ofrecemos 5 años de garantía en muebles y 2 años en instalaciones.'
+      icon: Hammer,
+      title: 'Fabricación e instalación',
+      description: 'Con tu conformidad, el proyecto pasa a nuestro taller. Fabricamos cada pieza a medida y la instalamos en las fechas acordadas. Sin sorpresas.'
+    },
+    {
+      number: 6,
+      icon: HeartHandshake,
+      title: 'Postventa y seguimiento',
+      description: 'Cuando terminamos, no desaparecemos. Seguimos a tu disposición para cualquier duda, ajuste o incidencia que pueda surgir. Porque para nosotros, el proyecto acaba cuando tú estás satisfecho.'
     }
   ];
 
   return (
     <>
       <Helmet>
-        <title>Nuestro Proceso - Cómo Trabajamos | Cocinas Farely</title>
-        <meta name="description" content="Descubre nuestro proceso de trabajo paso a paso: desde la consulta inicial hasta la entrega final. Transparencia y profesionalidad en cada fase." />
+        <title>Nuestros Procesos - Cómo Trabajamos | Cocinas Farely</title>
+        <meta name="description" content="Descubre cómo trabajamos paso a paso: desde la primera reunión en nuestro showroom hasta el seguimiento postventa. Transparencia y profesionalidad en cada fase." />
       </Helmet>
 
       <Header />
@@ -63,7 +71,7 @@ function ProcesoPage() {
             >
               <h2 className="section-title">Nuestro Proceso</h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Un método probado que garantiza resultados excepcionales en cada proyecto
+                Así trabajamos, sin más misterio.
               </p>
             </motion.div>
           </div>
@@ -80,6 +88,28 @@ function ProcesoPage() {
                   delay={index * 0.1}
                 />
               ))}
+
+              {/* CTA call to visit */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-center mt-4"
+              >
+                <p className="text-xl text-muted-foreground italic mb-6">
+                  Tu cocina empieza visitándonos. Te esperamos.
+                </p>
+                <Link to="/contacto">
+                  <Button
+                    size="lg"
+                    className="bg-primary text-primary-foreground hover:bg-ambar-claro transition-all duration-200 active:scale-[0.98]"
+                  >
+                    Concertar visita al showroom
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -173,17 +203,9 @@ function ProcesoPage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="bg-primary text-primary-foreground rounded-2xl p-8 md:p-12"
               >
-                <div className="space-y-6 text-lg leading-relaxed">
-                  <p>
-                    En Cocinas Farely nos comprometemos a cumplir los plazos acordados y a mantener una comunicación constante durante todo el proceso. Recibirás actualizaciones regulares sobre el estado de tu proyecto.
-                  </p>
-                  <p>
-                    Trabajamos con un sistema de gestión de proyectos que nos permite coordinar eficientemente todas las fases: diseño, fabricación e instalación. Esto minimiza los tiempos de espera y garantiza que tu proyecto se complete en el plazo estimado.
-                  </p>
-                  <p>
-                    Si surge algún imprevisto que pueda afectar al plazo, te informaremos inmediatamente y buscaremos la mejor solución. Tu satisfacción es nuestra prioridad.
-                  </p>
-                </div>
+                <p className="text-lg leading-relaxed">
+                  Cumplir lo que prometemos es tan importante para nosotros como el resultado final. Durante todo el proceso te mantenemos informado. Sabemos que en una obra pueden surgir imprevistos — cuando ocurre, somos los primeros en decírtelo y en buscar una solución. Nadie es perfecto, pero sí podemos comprometernos a ser siempre transparentes y a no dejarte solo ante ningún problema.
+                </p>
               </motion.div>
             </div>
           </div>

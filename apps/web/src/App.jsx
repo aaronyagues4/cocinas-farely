@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Routes, BrowserRouter as Router, Navigate } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import HomePage from './pages/HomePage.jsx';
 import ServiciosPage from './pages/ServiciosPage.jsx';
@@ -27,7 +27,7 @@ function App() {
         <Route path="/sobre-nosotros" element={<SobreNosotrosPage />} />
         <Route path="/proceso" element={<ProcesoPage />} />
         <Route path="/testimonios" element={<TestimoniosPage />} />
-        <Route path="/faq" element={<FaqPage />} />
+        <Route path="/faq" element={<Navigate to="/contacto" replace />} />
         <Route path="/contacto" element={<ContactoPage />} />
         <Route path="/aviso-legal" element={<AvisoLegalPage />} />
         <Route path="/politica-privacidad" element={<PoliticaPrivacidadPage />} />

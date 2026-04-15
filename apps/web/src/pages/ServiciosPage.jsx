@@ -15,23 +15,23 @@ function ServiciosPage() {
       id: 'cocinas',
       title: 'Cocinas a medida',
       image: 'https://images.unsplash.com/photo-1578854888566-a4fde9f0b0e9',
-      description: 'Diseñamos y fabricamos cocinas completamente personalizadas que se adaptan a tu espacio y estilo de vida. Cada proyecto es único y refleja la personalidad de nuestros clientes.',
+      description: 'Cada cocina que fabricamos empieza por escucharte. Tu espacio, tu forma de vivir, lo que imaginas y quizás lo que todavía no sabes que necesitas. Antes de fabricar nada, te mostramos tu cocina en un render 3D fotorrealista para que puedas verla, ajustarla y aprobarla con total seguridad. Desde ahí te acompañamos en cada decisión, con criterio y sin prisas, hasta que el resultado es exactamente el tuyo. Solo trabajamos con materiales que cumplan nuestros estándares — porque nos importa lo que instalamos en tu casa.',
       features: [
-        'Diseño 3D personalizado antes de la fabricación',
+        'Diseño 3D fotorrealista antes de la fabricación',
         'Materiales de primera calidad: madera maciza, lacados, laminados',
         'Electrodomésticos de marcas premium integrados',
         'Iluminación LED bajo muebles y en vitrinas',
         'Encimeras de granito, cuarzo o Silestone',
         'Herrajes de cierre suave y sistemas de extracción',
-        'Garantía de 5 años en todos los muebles',
+        'Garantía en todos los muebles fabricados',
         'Instalación profesional incluida'
       ]
     },
     {
       id: 'banos',
-      title: 'Baños completos',
+      title: 'Muebles de baño a medida',
       image: 'https://images.unsplash.com/photo-1641870538440-f88f802f84d5',
-      description: 'Reformas integrales de baños que combinan funcionalidad y diseño. Creamos espacios de relax adaptados a tus necesidades, desde baños principales hasta aseos de cortesía.',
+      description: 'El baño es uno de los espacios más personales de la casa, y merece el mismo cuidado que el resto. Fabricamos muebles de baño a medida y nos encargamos de todo lo que lo rodea — lavabos, grifería, espejos y accesorios — para que cada elemento encaje con el siguiente. Tú eliges el estilo, nosotros lo hacemos realidad.',
       features: [
         'Reforma completa: fontanería, electricidad, alicatado',
         'Mamparas de ducha y bañeras de hidromasaje',
@@ -45,9 +45,9 @@ function ServiciosPage() {
     },
     {
       id: 'armarios',
-      title: 'Armarios empotrados',
+      title: 'Armarios a medida',
       image: 'https://images.unsplash.com/photo-1613193196083-f25f4acabf5a',
-      description: 'Armarios empotrados y vestidores diseñados para optimizar cada centímetro de espacio. Soluciones de almacenamiento inteligentes con acabados de alta calidad.',
+      description: 'Es el primer sitio que abres por la mañana y el último que cierras por la noche. Por eso merece estar bien pensado. No fabricamos armarios estándar — fabricamos el tuyo. Ya sea un armario empotrado, un vestidor, un closet o cualquier solución de almacenamiento, analizamos cada rincón y cómo lo usas para diseñar algo que tenga sentido de verdad. Tú eliges los materiales, los acabados y la distribución. Nosotros nos encargamos de que funcione.',
       features: [
         'Diseño interior personalizado según tus necesidades',
         'Puertas correderas o abatibles con perfiles de aluminio',
@@ -57,6 +57,20 @@ function ServiciosPage() {
         'Barras cromadas y accesorios de organización',
         'Acabados en melamina, lacado o espejo',
         'Aprovechamiento máximo del espacio disponible'
+      ]
+    },
+    {
+      id: 'profesionales',
+      title: 'Red de profesionales de confianza',
+      image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d',
+      description: 'Una reforma implica más que muebles. Cuando nos lo pides, te recomendamos los profesionales que nosotros mismos elegiríamos — albañiles, electricistas y fontaneros que conocemos, que hemos visto trabajar y que sabemos que no van a fallarte. Porque queremos que todo tu proyecto salga bien, no solo la parte que hacemos nosotros.',
+      features: [
+        'Red de albañiles, electricistas y fontaneros de confianza',
+        'Profesionales que hemos visto trabajar y avalamos',
+        'Coordinación entre todos los gremios del proyecto',
+        'Un interlocutor único para toda la reforma',
+        'Seguimiento del trabajo de cada profesional',
+        'Tranquilidad de no tener que buscar por tu cuenta'
       ]
     }
   ];
@@ -82,7 +96,7 @@ function ServiciosPage() {
             >
               <h2 className="section-title">Nuestros Servicios</h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Soluciones completas de diseño y reforma para transformar tu hogar con calidad y profesionalidad
+                Diseño, fabricación e instalación. Un proyecto hecho a tu medida, de principio a fin.
               </p>
             </motion.div>
           </div>
@@ -161,10 +175,10 @@ function ServiciosPage() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="section-title">
-                ¿Tienes un proyecto en mente?
+                Un proyecto bien hecho empieza por una buena conversación. Cuéntanoslo.
               </h2>
               <p className="text-xl mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
-                Cuéntanos tu idea y te ayudaremos a hacerla realidad con un presupuesto personalizado
+                Te escuchamos, medimos y te damos un presupuesto claro. Sin rodeos.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link to="/contacto">
