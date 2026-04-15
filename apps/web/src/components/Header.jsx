@@ -14,8 +14,7 @@ function Header() {
     { name: 'Servicios', path: '/servicios' },
     { name: 'Portfolio', path: '/portfolio' },
     { name: 'Sobre Nosotros', path: '/sobre-nosotros' },
-    { name: 'Proceso', path: '/proceso' },
-    { name: 'Testimonios', path: '/testimonios' },
+    { name: 'Nuestros Procesos', path: '/proceso' },
     { name: 'FAQ', path: '/faq' },
   ];
 
@@ -53,7 +52,7 @@ function Header() {
               </a>
               <Link to="/contacto">
                 <Button className="bg-primary text-primary-foreground hover:bg-[#E8B030] transition-all duration-300 font-medium rounded-xl px-6">
-                  Presupuesto
+                  Contacto
                 </Button>
               </Link>
             </div>
@@ -94,7 +93,7 @@ function Header() {
                     onClick={() => setIsOpen(false)}
                   >
                     <Button className="w-full bg-primary text-primary-foreground hover:bg-[#E8B030] transition-all duration-300 font-medium rounded-xl py-6 text-lg">
-                      Solicitar Presupuesto
+                      Contacto
                     </Button>
                   </Link>
                 </div>

@@ -29,6 +29,9 @@ function Footer() {
               <Link to="/sobre-nosotros" className="text-sm text-crema/75 hover:text-primary transition-colors duration-300">
                 Sobre Nosotros
               </Link>
+              <Link to="/testimonios" className="text-sm text-crema/75 hover:text-primary transition-colors duration-300">
+                Testimonios
+              </Link>
               <Link to="/trabaja-con-nosotros" className="text-sm text-crema/75 hover:text-primary transition-colors duration-300">
                 Trabaja con Nosotros
               </Link>
