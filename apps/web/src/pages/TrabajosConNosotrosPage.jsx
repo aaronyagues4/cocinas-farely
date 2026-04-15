@@ -12,35 +12,34 @@ function TrabajosConNosotrosPage() {
   const positions = [
     {
       title: 'Oficial de Carpintería',
-      description: 'Buscamos un profesional con experiencia demostrable en la fabricación y montaje de mobiliario a medida. Serás pieza clave en la materialización de nuestros diseños más exigentes.',
+      description: 'Buscamos un oficial con experiencia en fabricación y montaje de mobiliario a medida. Alguien que sepa leer un plano, que cuide los acabados y que entienda que detrás de cada mueble hay un cliente que lo va a usar cada día.',
       requirementsTitle: 'Valoramos:',
       requirements: [
-        'Experiencia mínima de 5 años en puesto similar',
-        'Dominio de maquinaria tradicional y CNC',
+        'Experiencia demostrable en mobiliario a medida',
+        'Dominio de maquinaria tradicional',
         'Capacidad de interpretación de planos técnicos',
-        'Atención meticulosa al detalle y acabados'
+        'Atención al detalle y a los acabados'
       ]
     },
     {
       title: 'Ayudante de Carpintería',
-      description: 'Si tienes formación básica en madera y ganas de aprender un oficio con futuro, este es tu lugar. Trabajarás mano a mano con nuestros oficiales más experimentados.',
+      description: 'Si tienes formación en madera y ganas de aprender un oficio con futuro, aquí tienes sitio. Trabajarás con oficiales con años de experiencia que te van a enseñar cómo se hacen las cosas bien.',
       requirementsTitle: 'Buscamos:',
       requirements: [
-        'Formación Profesional en Madera y Mueble (o similar)',
-        'Actitud proactiva y ganas de aprender',
-        'Capacidad para trabajar en equipo',
-        'Responsabilidad y compromiso'
+        'Formación en madera y mueble o similar',
+        'Ganas de aprender y mejorar cada día',
+        'Responsabilidad y trabajo en equipo'
       ]
     },
     {
-      title: 'Asesor/Técnico Comercial',
-      description: 'Buscamos un perfil mixto con conocimientos técnicos y habilidades comerciales para asesorar a nuestros clientes y guiarles en el diseño de sus espacios.',
+      title: 'Asesor Comercial',
+      description: 'Buscamos a alguien que sepa escuchar al cliente, entender lo que necesita y acompañarle en el proceso de diseño. Con conocimientos técnicos suficientes para hablar de materiales y espacios, y con la cercanía que nos define.',
       requirementsTitle: 'Buscamos:',
       requirements: [
         'Experiencia en venta de mobiliario o reformas',
-        'Conocimientos de programas de diseño 3D',
-        'Excelentes habilidades de comunicación',
-        'Orientación a resultados y satisfacción del cliente'
+        'Conocimientos de diseño 3D',
+        'Buenas habilidades de comunicación',
+        'Orientación al cliente'
       ]
     }
   ];
@@ -97,13 +96,10 @@ function TrabajosConNosotrosPage() {
             className="max-w-4xl mx-auto"
           >
             <h2 className="section-title">
-              Únete al Equipo Farely
+              Únete al equipo Farely
             </h2>
-            <p className="text-2xl md:text-3xl mb-8 text-primary font-medium">
-              Donde la Pasión se Convierte en Diseño
-            </p>
             <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
-              Con más de 30 años de experiencia transformando hogares, en Cocinas Farely sabemos que nuestro mayor activo es nuestro equipo. Buscamos personas comprometidas, creativas y con ganas de dejar su huella en cada proyecto. Si compartes nuestra pasión por la excelencia y el trabajo bien hecho, queremos conocerte.
+              En Farely cada persona que forma parte del equipo importa de verdad. Llevamos en el sector desde 1995 y lo que nos ha mantenido aquí es el oficio bien hecho y las personas que lo hacen posible. Si buscas un lugar donde aprender, crecer y trabajar en un entorno cercano y sin complicaciones, puede que seamos lo que buscas.
             </p>
           </motion.div>
         </div>
@@ -117,13 +113,23 @@ function TrabajosConNosotrosPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <h2 className="section-title">Buscamos Talento Apasionado</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Actualmente tenemos varias posiciones abiertas para incorporar a nuestro equipo de profesionales. Descubre dónde encaja mejor tu perfil.
-            </p>
+            <h2 className="section-title">Puestos abiertos</h2>
           </motion.div>
+
+          {/* Valores */}
+          <motion.blockquote
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="border-l-4 border-primary pl-6 mb-14 max-w-3xl mx-auto"
+          >
+            <p className="text-lg text-foreground leading-relaxed italic">
+              "Independientemente del puesto, hay tres cosas que valoramos por encima de cualquier currículum: ganas de aprender, ganas de trabajar y ser buena persona. El resto se puede enseñar."
+            </p>
+          </motion.blockquote>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {positions.map((position, index) => (

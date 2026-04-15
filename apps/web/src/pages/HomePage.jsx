@@ -124,11 +124,10 @@ function HomePage() {
               { num: 1, icon: Hammer,        title: 'Fabricación Propia',          desc: 'Fabricamos nosotros mismos cada mueble, de principio a fin. Eso nos permite cuidar cada detalle y responder por tu resultado.' },
               { num: 2, icon: Search,        title: 'Atención al Detalle',         desc: 'La precisión y el cuidado en cada paso aseguran resultados perfectos hasta en el último rincón.' },
               { num: 3, icon: Pencil,        title: 'Diseño Personalizado',        desc: 'Creamos espacios únicos que reflejan tu estilo, personalidad y forma de vida.' },
-              { num: 4, icon: Lightbulb,     title: 'Innovación y Tendencias',     desc: 'Siempre a la vanguardia del diseño interior, combinamos creatividad con las últimas tendencias.' },
-              { num: 5, icon: Handshake,     title: 'Trato cercano y compromiso',  desc: 'Te acompañamos en todo el proceso con atención personalizada, cercanía y profesionalidad.' },
-              { num: 6, icon: Gem,           title: 'Materiales de Alta Calidad',  desc: 'Seleccionamos cuidadosamente los mejores materiales para ofrecerte durabilidad, belleza y resistencia.' },
-              { num: 7, icon: Trophy,        title: 'Experiencia y Tradición',     desc: 'Más de 30 años de trayectoria uniendo la tradición artesanal con la tecnología y técnicas más modernas.' },
-              { num: 8, icon: HeartHandshake, title: 'Estamos después',            desc: 'Una vez instalada tu cocina, seguimos aquí. Si algo no está perfecto, volvemos y lo resolvemos. Sin excusas.' },
+              { num: 4, icon: Handshake,     title: 'Trato cercano y compromiso',  desc: 'Te acompañamos en todo el proceso con atención personalizada, cercanía y profesionalidad.' },
+              { num: 5, icon: Gem,           title: 'Materiales de Alta Calidad',  desc: 'Seleccionamos cuidadosamente los mejores materiales para ofrecerte durabilidad, belleza y resistencia.' },
+              { num: 6, icon: Trophy,        title: 'Experiencia y Tradición',     desc: 'Más de 30 años de trayectoria uniendo la tradición artesanal con la tecnología y técnicas más modernas.' },
+              { num: 7, icon: HeartHandshake, title: 'Estamos después',            desc: 'Una vez instalada tu cocina, seguimos aquí. Si algo no está perfecto, volvemos y lo resolvemos. Sin excusas.' },
             ].map(({ num, icon: Icon, title, desc }, index) => (
               <motion.div
                 key={num}
