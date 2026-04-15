@@ -5,7 +5,7 @@ import { Instagram, Facebook, Linkedin, Phone, Mail, Clock, MapPin } from 'lucid
 
 function Footer() {
   return (
-    <footer className="bg-[#1A1A1A] text-[#F5F5F5]">
+    <footer className="bg-grafito text-crema">
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
@@ -15,7 +15,7 @@ function Footer() {
                 Cocinas <span className="text-primary">Farely</span>
               </span>
             </div>
-            <p className="text-[#F5F5F5]/80 text-sm leading-relaxed">
+            <p className="text-crema/75 text-sm leading-relaxed">
               Diseño y reforma de cocinas, baños y armarios a medida en la Vega Baja del Segura. Transformamos espacios con pasión y calidad.
             </p>
           </div>
@@ -26,16 +26,16 @@ function Footer() {
               Enlaces rápidos
             </span>
             <div className="flex flex-col gap-3">
-              <Link to="/sobre-nosotros" className="text-sm text-[#F5F5F5]/80 hover:text-primary transition-colors duration-300">
+              <Link to="/sobre-nosotros" className="text-sm text-crema/75 hover:text-primary transition-colors duration-300">
                 Sobre Nosotros
               </Link>
-              <Link to="/trabaja-con-nosotros" className="text-sm text-[#F5F5F5]/80 hover:text-primary transition-colors duration-300">
+              <Link to="/trabaja-con-nosotros" className="text-sm text-crema/75 hover:text-primary transition-colors duration-300">
                 Trabaja con Nosotros
               </Link>
-              <Link to="/aviso-legal" className="text-sm text-[#F5F5F5]/80 hover:text-primary transition-colors duration-300">
+              <Link to="/aviso-legal" className="text-sm text-crema/75 hover:text-primary transition-colors duration-300">
                 Aviso Legal
               </Link>
-              <Link to="/politica-privacidad" className="text-sm text-[#F5F5F5]/80 hover:text-primary transition-colors duration-300">
+              <Link to="/politica-privacidad" className="text-sm text-crema/75 hover:text-primary transition-colors duration-300">
                 Política de Privacidad
               </Link>
             </div>
@@ -47,15 +47,15 @@ function Footer() {
               Contacto
             </span>
             <div className="flex flex-col gap-4">
-              <a href="tel:+34678636106" className="flex items-center gap-3 text-sm text-[#F5F5F5]/80 hover:text-primary transition-colors duration-300 group">
+              <a href="tel:+34678636106" className="flex items-center gap-3 text-sm text-crema/75 hover:text-primary transition-colors duration-300 group">
                 <Phone className="w-4 h-4 group-hover:text-primary transition-colors duration-300 flex-shrink-0" />
                 678 63 61 06
               </a>
-              <a href="mailto:cocinasfarely@yahoo.es" className="flex items-center gap-3 text-sm text-[#F5F5F5]/80 hover:text-primary transition-colors duration-300 group">
+              <a href="mailto:cocinasfarely@yahoo.es" className="flex items-center gap-3 text-sm text-crema/75 hover:text-primary transition-colors duration-300 group">
                 <Mail className="w-4 h-4 group-hover:text-primary transition-colors duration-300 flex-shrink-0" />
                 cocinasfarely@yahoo.es
               </a>
-              <div className="flex items-start gap-3 text-sm text-[#F5F5F5]/80">
+              <div className="flex items-start gap-3 text-sm text-crema/75">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <span>Calle Ramón y Cajal 17<br/>Benijófar - 03178, España</span>
               </div>
@@ -69,7 +69,7 @@ function Footer() {
             </span>
             <div className="flex items-start gap-3 mb-6">
               <Clock className="w-4 h-4 mt-0.5 text-primary flex-shrink-0" />
-              <div className="text-sm text-[#F5F5F5]/80 space-y-1">
+              <div className="text-sm text-crema/75 space-y-1">
                 <p>Lunes a viernes: 9:00-19:00</p>
                 <p>Sábado: 10:00-13:00</p>
                 <p>Domingo: Cerrado</p>
@@ -97,7 +97,7 @@ function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-12 pt-8 text-center">
-          <p className="text-sm text-[#F5F5F5]/60">
+          <p className="text-sm text-crema/50">
             © {new Date().getFullYear()} Cocinas Farely. Todos los derechos reservados.
           </p>
         </div>

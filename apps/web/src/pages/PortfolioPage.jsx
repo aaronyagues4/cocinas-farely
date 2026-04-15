@@ -74,7 +74,7 @@ function PortfolioPage() {
         </section>
 
         {/* Filter Buttons */}
-        <section className="py-8 bg-white sticky top-20 z-30 border-b border-border">
+        <section className="py-8 bg-background sticky top-20 z-30 border-b border-border">
           <div className="container-custom">
             <div className="flex flex-wrap justify-center gap-3">
               {categories.map((category) => (

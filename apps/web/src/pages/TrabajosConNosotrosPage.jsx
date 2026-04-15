@@ -158,7 +158,7 @@ function TrabajosConNosotrosPage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="section-spacing bg-white">
+      <section className="section-spacing bg-background">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -183,7 +183,7 @@ function TrabajosConNosotrosPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-muted rounded-2xl p-8 text-center group hover:bg-primary/5 transition-colors duration-300"
               >
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-card rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
                   <pillar.icon className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-foreground">{pillar.title}</h3>

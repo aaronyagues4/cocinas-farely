@@ -93,7 +93,7 @@ function ServiciosPage() {
           <section 
             key={service.id} 
             id={service.id}
-            className={`section-spacing ${index % 2 === 0 ? 'bg-white' : 'bg-muted'}`}
+            className={`section-spacing ${index % 2 === 0 ? 'bg-background' : 'bg-muted'}`}
           >
             <div className="container-custom">
               <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>

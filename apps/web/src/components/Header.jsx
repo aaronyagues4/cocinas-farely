@@ -22,7 +22,7 @@ function Header() {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -52,7 +52,7 @@ function Header() {
                 678 63 61 06
               </a>
               <Link to="/contacto">
-                <Button className="bg-primary text-primary-foreground hover:bg-[#E8B84D] transition-all duration-300 font-semibold rounded-xl px-6">
+                <Button className="bg-primary text-primary-foreground hover:bg-[#E8B030] transition-all duration-300 font-medium rounded-xl px-6">
                   Presupuesto
                 </Button>
               </Link>
@@ -66,7 +66,7 @@ function Header() {
                 <Menu className="w-6 h-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white">
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background">
               <div className="flex flex-col gap-4 mt-8">
                 {navLinks.map((link) => (
                   <Link
@@ -93,7 +93,7 @@ function Header() {
                     to="/contacto"
                     onClick={() => setIsOpen(false)}
                   >
-                    <Button className="w-full bg-primary text-primary-foreground hover:bg-[#E8B84D] transition-all duration-300 font-semibold rounded-xl py-6 text-lg">
+                    <Button className="w-full bg-primary text-primary-foreground hover:bg-[#E8B030] transition-all duration-300 font-medium rounded-xl py-6 text-lg">
                       Solicitar Presupuesto
                     </Button>
                   </Link>

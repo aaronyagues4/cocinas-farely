@@ -48,7 +48,7 @@ function ContactForm() {
           id="name"
           type="text"
           {...register('name', { required: 'El nombre es obligatorio' })}
-          className="bg-white border-border text-foreground placeholder:text-muted-foreground focus-visible:ring-primary focus-visible:border-primary transition-all duration-300"
+          className="bg-card border-border text-foreground placeholder:text-muted-foreground focus-visible:ring-primary focus-visible:border-primary transition-all duration-300"
           placeholder="Tu nombre"
         />
         {errors.name && (
@@ -70,7 +70,7 @@ function ContactForm() {
               message: 'Email no válido'
             }
           })}
-          className="bg-white border-border text-foreground placeholder:text-muted-foreground focus-visible:ring-primary focus-visible:border-primary transition-all duration-300"
+          className="bg-card border-border text-foreground placeholder:text-muted-foreground focus-visible:ring-primary focus-visible:border-primary transition-all duration-300"
           placeholder="tu@email.com"
         />
         {errors.email && (
@@ -92,7 +92,7 @@ function ContactForm() {
               message: 'El teléfono debe tener al menos 9 dígitos'
             }
           })}
-          className="bg-white border-border text-foreground placeholder:text-muted-foreground focus-visible:ring-primary focus-visible:border-primary transition-all duration-300"
+          className="bg-card border-border text-foreground placeholder:text-muted-foreground focus-visible:ring-primary focus-visible:border-primary transition-all duration-300"
           placeholder="+34 912 345 678"
         />
         {errors.phone && (
@@ -108,7 +108,7 @@ function ContactForm() {
           id="subject"
           type="text"
           {...register('subject', { required: 'El asunto es obligatorio' })}
-          className="bg-white border-border text-foreground placeholder:text-muted-foreground focus-visible:ring-primary focus-visible:border-primary transition-all duration-300"
+          className="bg-card border-border text-foreground placeholder:text-muted-foreground focus-visible:ring-primary focus-visible:border-primary transition-all duration-300"
           placeholder="¿En qué podemos ayudarte?"
         />
         {errors.subject && (
@@ -130,7 +130,7 @@ function ContactForm() {
               message: 'El mensaje debe tener al menos 10 caracteres'
             }
           })}
-          className="bg-white border-border text-foreground placeholder:text-muted-foreground focus-visible:ring-primary focus-visible:border-primary transition-all duration-300 resize-none"
+          className="bg-card border-border text-foreground placeholder:text-muted-foreground focus-visible:ring-primary focus-visible:border-primary transition-all duration-300 resize-none"
           placeholder="Cuéntanos sobre tu proyecto..."
         />
         {errors.message && (
@@ -141,7 +141,7 @@ function ContactForm() {
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-primary text-primary-foreground hover:bg-[#E8B84D] transition-all duration-300 active:scale-[0.98] font-bold text-lg py-6 rounded-xl shadow-md hover:shadow-lg"
+        className="w-full bg-primary text-primary-foreground hover:bg-ambar-claro transition-all duration-300 active:scale-[0.98] font-medium text-lg py-6 rounded-xl shadow-md hover:shadow-lg"
       >
         {isSubmitting ? (
           <>

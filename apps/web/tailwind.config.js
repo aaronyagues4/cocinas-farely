@@ -17,6 +17,16 @@ module.exports = {
     },
     extend: {
       colors: {
+        /* Paleta de marca Cocinas Farely */
+        grafito: '#1E1D1B',
+        'grafito-medio': '#2D2C29',
+        ambar: '#D4930A',
+        'ambar-claro': '#E8B030',
+        'ambar-suave': '#F2CC72',
+        lino: '#EDE9E2',
+        piedra: '#9C9890',
+        crema: '#FAF7F2',
+        /* Sistema de diseño (CSS variables) */
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -15,7 +15,7 @@ function FloatingButtons() {
       >
         <Link
           to="/contacto"
-          className="w-14 h-14 bg-primary text-primary-foreground rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-300 hover:bg-[#E8B84D] hover:scale-110 active:scale-95 group"
+          className="w-14 h-14 bg-primary text-primary-foreground rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-300 hover:bg-ambar-claro hover:scale-110 active:scale-95 group"
           aria-label="Ir a contacto"
         >
           <Mail className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
@@ -32,7 +32,7 @@ function FloatingButtons() {
           href="https://wa.me/34678636106"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-14 h-14 bg-primary text-primary-foreground rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-300 hover:bg-[#E8B84D] hover:scale-110 active:scale-95 group"
+          className="w-14 h-14 bg-primary text-primary-foreground rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-300 hover:bg-ambar-claro hover:scale-110 active:scale-95 group"
           aria-label="Contactar por WhatsApp"
         >
           <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
